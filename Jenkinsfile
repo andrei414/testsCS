@@ -3,8 +3,16 @@ pipeline {
     stages {
         stage('check shellcheck') {
             steps {
-                sh 'chmod +x check.sh'
-                sh './check.sh'
+                sh """
+                FILE="file.txt"
+                STRING="error"
+
+                if  grep -q "$STRING" "$FILE" ; then
+                         exit 1 ; 
+                else
+                         echo 'the string does not exist' ; 
+                fi
+                """
             }
         }
     }
