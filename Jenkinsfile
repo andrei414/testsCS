@@ -1,7 +1,7 @@
 def runShell(String command){
     def responseCode = sh returnStatus: true, script: "${command} &> tmp.txt"
     def output =  readFile(file: "tmp.txt")
-    return (output != "exit 1")
+    return (output != "")
 }
 
 pipeline {
@@ -11,7 +11,7 @@ pipeline {
             steps {
                 script {
                     if (runShell('grep \'error\' file.txt')) {
-                        sh "exit 1"
+                        sh 'exit 1'
                     }
                 }
             }
