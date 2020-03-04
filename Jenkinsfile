@@ -1,4 +1,3 @@
-final file = 'file.txt'
 
 pipeline {
     agent any
@@ -6,7 +5,12 @@ pipeline {
         stage('check shellcheck') {
             steps {
                 script {
-                    if ("$file".contains("error")){
+                    def runShell(String command){
+                    def responseCode = sh returnStatus: true, script: "${command} &> tmp.txt"
+                    def output =  readFile(file: "tmp.txt")
+                    return (output != "")
+                    }
+                    if (runShell('grep \'error\' file.txt')) {
                         sh "exit 1"
                     }
                 }
