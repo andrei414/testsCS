@@ -3,3 +3,4 @@ errorz
 err
 erro
 -error
+ERROR
