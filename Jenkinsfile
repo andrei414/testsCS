@@ -1,3 +1,7 @@
+FILE="file.txt"
+STRING="error"
+
+
 pipeline {
     agent any
     stages {

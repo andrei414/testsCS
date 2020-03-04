@@ -1,5 +1,7 @@
 #!/bin/bash
 
-if grep -q error "$file.txt"; then
-  exit 1 # SomeString was found
+if  grep -q "$STRING" "$FILE" ; then
+         echo 'the string exists' ; 
+else
+         echo 'the string does not exist' ; 
 fi
