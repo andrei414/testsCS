@@ -3,9 +3,13 @@ pipeline {
     stages {
         stage('check shellcheck') {
             steps {
-                bash '''#!/bin/bash
-                 echo "hello world" 
-                '''
+                script {
+                    '''
+                    #!/bin/bash
+                    echo "hello world"
+                    '''
+                    }
+                }
             }
         }
     }
