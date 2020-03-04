@@ -6,9 +6,7 @@ pipeline {
     agent any
     stages {
         stage('check shellcheck') {
-            when {
-                any {branch "master"}
-            }
+            when {anyOf {branch "master"}}
             steps {
                 sh """
                 if  grep -Fxe "$STRING" "$FILE" ; then
