@@ -1,5 +1,5 @@
 FILE="file.txt"
-STRING="er"
+STRING="err"
 
 pipeline {
     agent any
