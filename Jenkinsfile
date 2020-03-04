@@ -1,7 +1,7 @@
 def runShell(String command){
     def responseCode = sh returnStatus: true, script: "${command} &> tmp.txt"
-    def output =  readFile(file: "fieleexample.txt")
-    return (output != "fila contine error")
+    def output =  readFile(file: "tmp.txt")
+    return (output != "")
 }
 
 pipeline {
