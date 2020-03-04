@@ -5,9 +5,12 @@ STRING="-error"
 pipeline {
     agent any
     stages {
+        stage('check branch'){
+            sh "git branch"
+        }
         stage('check shellcheck') {
             when {
-                anyOf {branch 'refs/heads/master'}
+                anyOf {branch 'master'}
             }
             steps {
                 sh """
