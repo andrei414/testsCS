@@ -1,6 +1,6 @@
 FILE="file.txt"
 STRING="-error"
-BRANCH=$(git rev-parse --abbrev-ref HEAD)
+BRANCH=$(git branch)
 
 pipeline {
     agent any
