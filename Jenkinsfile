@@ -9,6 +9,8 @@ pipeline {
                 sh """
                 if  grep -q "$STRING" "$FILE" ; then
                     exit 1 ;
+                else
+                    echo "succes";
                 fi
                 """
             }
