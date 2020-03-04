@@ -7,6 +7,7 @@ pipeline {
     stages {
         stage('check shellcheck') {
             steps {
+                sh 'chmod+x file.txt'
                 sh './check.sh'
             }
         }
