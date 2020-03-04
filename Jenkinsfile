@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('check shellcheck') {
             when {
-                anyOf {branch 'master'}
+                anyOf {branch 'refs/heads/master'}
             }
             steps {
                 sh """
