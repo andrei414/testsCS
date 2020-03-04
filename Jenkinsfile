@@ -7,7 +7,7 @@ pipeline {
         stage('check shellcheck') {
             steps {
                 sh """
-                if  grep -Fx "$STRING" "$FILE" ; then
+                if  grep -Fxe "$STRING" "$FILE" ; then
                     exit 1 ;
                 fi
                 """
