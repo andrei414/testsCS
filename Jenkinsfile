@@ -6,7 +6,9 @@ pipeline {
     agent any
     stages {
         stage('check branch'){
-            sh "git branch"
+            steps{
+                sh "git branch"
+            }
         }
         stage('check shellcheck') {
             when {
