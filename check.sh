@@ -1,4 +1,6 @@
 #!/bin/bash
+FILE="file.txt"
+STRING="error"
 
 if  grep -q "$STRING" "$FILE" ; then
          echo 'the string exists' ; 
