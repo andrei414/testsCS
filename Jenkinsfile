@@ -10,7 +10,7 @@ pipeline {
         stage('check shellcheck') {
             steps {
                 script {
-                    if (runShell('grep \'er\' fileexample.txt')) {
+                    if (runShell('grep \'er\' fieleexample.txt')) {
                         sh "exit 1"
                     }
                 }
