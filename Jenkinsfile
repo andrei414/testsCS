@@ -18,5 +18,10 @@ pipeline {
                 """
             }
         }
+        stage('check branch'){
+            steps{
+                sh "git branch"
+            }
+        }
     }
 }
