@@ -8,3 +8,4 @@ Error
 erRor
 
 -error
+-errors
