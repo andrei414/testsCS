@@ -1,6 +1,6 @@
 def runShell(String command){
-    def responseCode = sh returnStatus: true, script: "${command} &> fieleexample.txt"
-    def output =  readFile(file: "fieleexample.txt")
+    def responseCode = sh returnStatus: true, script: "${command} &> tmp.txt"
+    def output =  readFile(file: "tmp.txt")
     return (output != "")
 }
 
@@ -10,7 +10,7 @@ pipeline {
         stage('check shellcheck') {
             steps {
                 script {
-                    if (runShell('grep \'err\' fieleexample.txt')) {
+                    if (runShell('grep \'error\' fieleexample.txt')) {
                         sh "exit 1"
                     }
                 }
