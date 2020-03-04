@@ -1,4 +1,8 @@
-
+def runShell(String command){
+    def responseCode = sh returnStatus: true, script: "${command} &> tmp.txt"
+    def output =  readFile(file: "tmp.txt")
+    return (output != "")
+}
 
 pipeline {
     agent any
@@ -6,9 +10,9 @@ pipeline {
         stage('check shellcheck') {
             steps {
                 script {
-                    if grep -q error "$fieleexample.txt"; then
-                     exit 1 # error was found
-                    fi
+                    if (runShell('grep \'error\' file.txt')) {
+                        sh "exit 1"
+                    }
                 }
             }
         }
