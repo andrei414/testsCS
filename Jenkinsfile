@@ -1,5 +1,5 @@
 FILE="file.txt"
-STRING="\berror\b"
+STRING="error"
 
 pipeline {
     agent any
