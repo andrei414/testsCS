@@ -8,7 +8,6 @@ pipeline {
         stage('check shellcheck') {
             steps {
                 sh './check.sh'
-               }
             }
         }
     }
