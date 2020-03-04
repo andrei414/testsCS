@@ -1,15 +1,13 @@
 FILE="file.txt"
 STRING="-error"
+final MASTER_BRANCH_NAME = 'master'
 
 
 pipeline {
     agent any
     stages {
         stage('check shellcheck') {
-            when {
-                not {
-                    branch "master"
-                }
+            when { anyOf { branch 'master' } }
             }
             steps {
                 sh """
