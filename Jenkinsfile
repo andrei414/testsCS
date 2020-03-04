@@ -1,6 +1,6 @@
 FILE="file.txt"
 STRING="-error"
-BRANCH=$(git branch)
+
 
 pipeline {
     agent any
