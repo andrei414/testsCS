@@ -7,7 +7,8 @@ pipeline {
     agent any
     stages {
         stage('check shellcheck') {
-            when { anyOf { branch 'master' } }
+            when {
+                anyOf {branch 'master'}
             }
             steps {
                 sh """
@@ -18,5 +19,4 @@ pipeline {
             }
         }
     }
-
-
+}
