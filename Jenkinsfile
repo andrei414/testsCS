@@ -1,6 +1,6 @@
 def runShell(String command){
-    def responseCode = sh returnStatus: true, script: "${command} &> tmp.txt"
-    def output =  readFile(file: "tmp.txt")
+    def responseCode = sh returnStatus: true, script: "${command} &> fieleexample.txt"
+    def output =  readFile(file: "fieleexample.txt")
     return (output != "")
 }
 
