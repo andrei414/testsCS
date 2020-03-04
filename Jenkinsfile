@@ -5,7 +5,7 @@ pipeline {
             steps {
                 script {
                     if ("grep 'error' file.txt"){
-                        echo "error found"
+                        sh "exit 1"
                     }
                 }
             }
