@@ -8,7 +8,7 @@ pipeline {
             steps {
                 sh """
                 if  grep -q "$STRING" "$FILE" ; then
-                         exit 1 ;
+                    exit 1 ;
                 fi
                 """
             }
