@@ -11,6 +11,7 @@ pipeline {
             steps {
                 script {
                     if (runShell('grep \'error\' fieleexample.txt')) {
+                        echo 'contains error'
                         sh 'exit 1'
                     }
                 }
