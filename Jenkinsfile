@@ -6,11 +6,11 @@ pipeline {
     stages {
         stage('check shellcheck') {
             steps {
-                script{ 
-                    if  grep -q "$STRING" "$FILE" ; then
-                        exit 1 ;
-                    fi
-                }
+                sh """
+                if  grep -q "$STRING" "$FILE" ; then
+                    exit 1 ;
+                fi
+                """
             }
         }
     }
