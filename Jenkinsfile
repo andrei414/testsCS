@@ -7,9 +7,7 @@ pipeline {
     stages {
         stage('check shellcheck') {
             when {
-                not {
                     branch "master"
-                }
             }
             steps {
                 sh """

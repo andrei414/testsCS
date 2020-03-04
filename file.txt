@@ -6,3 +6,4 @@ Error
 -erroR
 -Error
 erRor
+-error
