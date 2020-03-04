@@ -1,4 +1,4 @@
-FILE="file.txt"
+FILE="test1/test2/file.txt"
 STRING="-error"
 
 
