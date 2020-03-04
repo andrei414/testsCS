@@ -3,10 +3,8 @@ pipeline {
     stages {
         stage('check shellcheck') {
             steps {
-                sh """
-                #!/bin/bash
-                echo 'hello'
-                """                }
+                sh './check.sh'
+               }
             }
         }
     }
