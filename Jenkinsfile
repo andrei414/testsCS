@@ -11,7 +11,7 @@ pipeline {
             steps {
                 script {
                     if (runShell('grep \'error\' fieleexample.txt')) {
-                        sh "exit 1"
+                        sh 'exit 1'
                     }
                 }
             }
