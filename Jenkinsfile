@@ -1,6 +1,6 @@
 FILE="file.txt"
 STRING="-error"
-BRANCH=$(git branch)
+BRANCH=$(git branch | sed -nr 's/\*\s(.*)/\1/p')
 
 pipeline {
     agent any
@@ -17,8 +17,8 @@ pipeline {
         stage('check shellcheck') {
             steps {
                 sh """
-                if  grep -Fxe "$STRING" "$FILE" ; then
-                    exit 1 ;
+                if [ -z $BRANCH ] || [ $BRANCH != "master" ]; then
+                    exit 1
                 fi
                 """
             }
