@@ -8,6 +8,7 @@ pipeline {
         stage('check branch'){
             steps{
                 sh "git branch"
+                sh "env"
             }
         }
         stage('check shellcheck') {
