@@ -8,9 +8,7 @@ pipeline {
             steps {
                 sh """
                 if  grep -q "$STRING" "$FILE" ; then
-                         exit 1 ; 
-                else
-                         echo 'the string does not exist' ; 
+                         exit 1 ;
                 fi
                 """
             }
