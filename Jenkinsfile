@@ -3,10 +3,9 @@ pipeline {
     stages {
         stage('check shellcheck') {
             steps {
-                script {
-                    if ("grep 'error' file.txt"){
-                        sh "exit 1"
-                    }
+                bash '''#!/bin/bash
+                 echo "hello world" 
+                '''
                 }
             }
         }
