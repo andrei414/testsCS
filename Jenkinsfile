@@ -16,8 +16,7 @@ pipeline {
             }
             steps {
                 sh """
-                string="version 2.2.1 -error"
-                if [[ $string =~ $snapshot ]]; then
+                if [[ $string == $snapshot ]]; then
                     exit 1 ;
                 fi
                 """
