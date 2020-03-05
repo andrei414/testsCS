@@ -16,7 +16,7 @@ pipeline {
             }
             steps {
                 sh """
-                if [[ $string == $snapshot ]]; then
+                if [[ $string == *"$snapshot"* ]]; then
                     exit 1 ;
                 fi
                 """
