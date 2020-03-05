@@ -17,7 +17,7 @@ pipeline {
             steps {
                 sh """
                 if [[ $string == *"$snapshot"* ]]; then
-                    exit 1 ;
+                    echo "error" ;
                 fi
                 """
             }
