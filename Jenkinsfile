@@ -17,7 +17,7 @@ pipeline {
             }
             steps {
                 sh """
-                if  grep -Fxe "$STRING" "$FILE" ; then
+                if [[$STRING == *"-error"*]]; then
                     exit 1 ;
                 fi
                 """
