@@ -1,4 +1,4 @@
-string="version 2.2.1 -error"
+STRING="version 2.2.1 -error"
 snapshot="error"
 
 pipeline {
@@ -16,7 +16,7 @@ pipeline {
             }
             steps {
                 sh """
-                if [[ $string == *"$snapshot"* ]]; then
+                if [[ $STRING == *"$snapshot"* ]]; then
                     echo "error" ;
                 fi
                 """
