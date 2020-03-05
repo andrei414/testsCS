@@ -1,5 +1,4 @@
-FILE="test1/test2/file.txt"
-STRING="-error"
+STRING="version 2.2.1 -error"
 
 
 pipeline {
@@ -17,7 +16,7 @@ pipeline {
             }
             steps {
                 sh """
-                if [[$FILE == *"error"*]]; then
+                if [[$STRING == *"error"*]]; then
                     exit 1 ;
                 fi
                 """
