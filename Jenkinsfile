@@ -1,4 +1,5 @@
 string="version 2.2.1 -error"
+snapshot="error"
 
 pipeline {
     agent any
@@ -16,8 +17,7 @@ pipeline {
             steps {
                 sh """
                 string="version 2.2.1 -error"
-                if [[ $string =! "error" ]]; 
-                then
+                if [[ $string =~ $snapshot ]]; then
                     exit 1 ;
                 fi
                 """
