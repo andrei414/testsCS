@@ -16,7 +16,8 @@ pipeline {
             steps {
                 sh """
                 string="version 2.2.1 -error"
-                if [[ $string =! "error" ]]; then
+                if [[ $string =! "error" ]]; 
+                then
                     exit 1 ;
                 fi
                 """
