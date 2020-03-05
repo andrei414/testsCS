@@ -16,7 +16,7 @@ pipeline {
             }
             steps {
                 sh """
-                if [ [$STRING == *"error"* ]]; then
+                if [[ $STRING == *"error"* ]]; then
                     exit 1 ;
                 fi
                 """
