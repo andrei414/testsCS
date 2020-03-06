@@ -20,6 +20,7 @@ pipeline {
                 sh """
                     var=`cat file.txt`
                 """
+                sh "echo urmeaza variabila"
                 sh "echo $var"
             }
         }
