@@ -1,5 +1,3 @@
-FILE=file.txt
-
 pipeline {
     agent any
     stages {
