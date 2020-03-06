@@ -1,5 +1,4 @@
-STRING="version 2.2.1 -error"
-snapshot="error"
+FILE=file.txt
 
 pipeline {
     agent any
@@ -18,7 +17,7 @@ pipeline {
                 sh """curl -D- -k -u andrei414:Test12345 -X POST -d @test.json -H "Content-Type: application/json" https://tsst123.atlassian.net/jira/rest/api/2/issue/ | grep -o -P '.{0,0}date.{0,0}' >| file.txt"""
                 sh "ls -la"
                 sh "cat file.txt"
-                sh """var='cat file.txt'"""
+                sh "var='cat $(FILE)'"
                 sh "echo '$var'"
             }
         }
