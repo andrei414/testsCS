@@ -19,8 +19,6 @@ pipeline {
                 sh "ls -la"
                 sh """
                     var=`cat file.txt`
-                    echo urmeaza variabila
-
                     echo $var
                 """
             }
