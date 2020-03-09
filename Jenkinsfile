@@ -28,7 +28,7 @@ pipeline {
         stage('create pull request'){
             steps{
                 sh "git branch"
-                sh "git pull"
+                sh "git pull remotes/origin/master"
             }
         }
     }
