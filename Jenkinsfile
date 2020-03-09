@@ -25,5 +25,10 @@ pipeline {
                 sh "git branch" 
             }
         }
+        stage('create pull request'){
+            steps{
+                sh "git branch"
+            }
+        }
     }
 }
