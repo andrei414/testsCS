@@ -16,7 +16,7 @@ pipeline {
                 sh "ls -la"
                 sh "cat file.txt"
                 sh " value=`cat file.txt` "
-                sh "echo $value"
+                sh """echo $value"""
             }
         }
     }
