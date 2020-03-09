@@ -18,5 +18,10 @@ pipeline {
                 sh 'value=`cat file.txt`;echo $value' 
             }
         }
+        stage('create new branch'){
+            steps{
+                sh "git checkout -b '$value'"
+            }
+        }
     }
 }
