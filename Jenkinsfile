@@ -9,7 +9,7 @@ pipeline {
         }
         stage ('git clone main'){
             steps{
-                sh "git clone git@github.com:andrei414/testsCS.git"
+                sh "cd testsCS/"
             }
         }
         stage('check shellcheck') {
