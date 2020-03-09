@@ -12,10 +12,10 @@ pipeline {
                 anyOf {branch 'master'}
             }
             steps {
-                sh label: '', script: 'curl -D- -k -u andrei414:Test12345 -X POST -d @test.json -H "Content-Type: application/json" https://tsst123.atlassian.net/jira/rest/api/2/issue/ | grep -o -P \'.{0,0}date.{0,0}\' >| file.txt'
+                sh """curl -D- -k -u andrei414:Test12345 -X POST -d @test.json -H "Content-Type: application/json" https://tsst123.atlassian.net/jira/rest/api/2/issue/ | grep -o -P '.{0,0}date.{0,0}' >| file.txt"""
                 sh "ls -la"
-                sh label: '', script: 'value=`cat file.txt`'
-                sh label: '', script: 'echo $value'
+                sh "cat file.txt"
+                sh 'value=`cat file.txt`;echo $value' 
             }
         }
     }
