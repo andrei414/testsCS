@@ -16,6 +16,8 @@ pipeline {
                 sh "ls -la"
                 sh label: '', script: 'value=`cat file.txt`'
                 sh label: '', script: 'echo $value'
+                sh label: '', script: 'echo $value'
+
             }
         }
     }
