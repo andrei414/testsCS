@@ -28,7 +28,7 @@ pipeline {
         stage('create pull request'){
             steps{
                 sh "git branch"
-                sh "git request-pull master"
+                sh "git request-pull https://andrei414:paroladetest1@github.com/andrei414/testsCS.git master"
             }
         }
     }
