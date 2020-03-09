@@ -7,6 +7,11 @@ pipeline {
                 sh "env"
             }
         }
+        stage ('git clone main'){
+            steps{
+                sh "git clone git@github.com:andrei414/testsCS.git"
+            }
+        }
         stage('check shellcheck') {
             when {
                 anyOf {branch 'master'}
