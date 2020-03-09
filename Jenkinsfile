@@ -15,7 +15,7 @@ pipeline {
                 sh """curl -D- -k -u andrei414:Test12345 -X POST -d @test.json -H "Content-Type: application/json" https://tsst123.atlassian.net/jira/rest/api/2/issue/ | grep -o -P '.{0,0}date.{0,0}' >| file.txt"""
                 sh "ls -la"
                 sh "cat file.txt"
-                sh 'value=`cat file.txt`;git config --global user.name "andrei414";echo $value;git push origin --delete $value; git checkout -b $value; git push --set-upstream origin $value'
+                sh 'value=`cat file.txt`;git remote add origin https://andrei414:Cepulamea007@github.com/andrei414/project.git;echo $value;git push origin --delete $value; git checkout -b $value; git push --set-upstream origin $value'
                 sh "git branch -a"
                 sh "git branch" 
             }
