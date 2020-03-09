@@ -15,7 +15,7 @@ pipeline {
                 sh """curl -D- -k -u andrei414:Test12345 -X POST -d @test.json -H "Content-Type: application/json" https://tsst123.atlassian.net/jira/rest/api/2/issue/ | grep -o -P '.{0,0}date.{0,0}' >| file.txt"""
                 sh "ls -la"
                 sh "cat file.txt"
-                sh 'value=`cat file.txt`;echo $value; git checkout $value;touch test9;remote add origin https://github.com/testCS/testCS.git;git add .;git commit -m "jenkins update";git push origin master'
+                sh 'value=`cat file.txt`;echo $value; git checkout $value;touch test9;git remote add origin https://github.com/testCS/testCS.git;git add .;git commit -m "jenkins update";git push -u origin master'
                 sh "git branch -a"
                 sh "git branch" 
             }
