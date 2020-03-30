@@ -16,9 +16,6 @@ pipeline {
 		            branch 'master'
 		        }
 		        steps {
-		            sh  """
-		                # some commands
-		                """
 		        }
 		    }
 		}
