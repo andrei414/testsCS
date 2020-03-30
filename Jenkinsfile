@@ -1,13 +1,23 @@
-node {
-    stage('build'){
-        echo "building"
+stage('build') {
+        steps {
+            sh  """
+                # Some commands
+                """
+            script {
+              timeout(time: 10, unit: 'MINUTES') {
+                input(id: "Deploy Gate", message: "Deploy ${params.project_name}?", ok: 'Deploy')
+              }
+            }
+        }
     }
-}
-stage('Deploy approval'){
-    input "Deploy to prod?"
-}
-node {
-    stage('deploy to prod'){
-        echo "deploying"
+
+    stage('deploy') {
+        when {
+            branch 'master'
+        }
+        steps {
+            sh  """
+                # some commands
+                """
+        }
     }
-}
