@@ -15,8 +15,6 @@ pipeline {
 		        when {
 		            branch 'master'
 		        }
-		        steps {
-		        }
 		    }
 		}
 }
