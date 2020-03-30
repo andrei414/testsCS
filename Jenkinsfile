@@ -1,9 +1,6 @@
 node {
     stage('build') {
         steps {
-            sh  """
-                # Some commands
-                """
             script {
               timeout(time: 10, unit: 'MINUTES') {
                 input(id: "Deploy Gate", message: "Deploy?", ok: 'Deploy')
