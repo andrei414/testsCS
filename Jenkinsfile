@@ -1,15 +1,29 @@
 pipeline {
 	agent any 
-	stages{ 
-		stage ('Approve?'){
-			
-			    timeout(time:2, unit:'DAYS')
-			    {
-			        input message: 'Can you approve this ??', submitter: MY_APPROVERS
-			    }
-			
+	stages{
+		stage('build') {
+		        steps {
+		            sh  """
+		                # Some commands
+		                """
+		            script {
+		              timeout(time: 10, unit: 'MINUTES') {
+		                input(id: "Deploy Gate", message: "Deploy", ok: 'Deploy' submitter: test)
+		              }
+		            }
+		        }
+		    }
+		
+		    stage('deploy') {
+		        when {
+		            branch 'master'
+		        }
+		        steps {
+		            sh  """
+		                # some commands
+		                """
+		        }
+		    }
 		}
-	}
-	
 }
 
