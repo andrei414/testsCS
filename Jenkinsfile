@@ -1,18 +1,13 @@
 pipeline {
 	agent any 
 	stages{
-		stage('build') {
-		        steps {
-		            sh  """
-		                # Some commands
-		                """
-		            script {
-		              timeout(time: 10, unit: 'MINUTES') {
-		                input(id: "Deploy Gate", message: "Deploy", ok: 'Deploy')
-		              }
-		            }
-		        }
-		    }
+stage{
+    script{
+        input "Continue?"
+        ...enter code here
+        ...
+    }
+}
 		
 		    stage('deploy') {
 		        when {
