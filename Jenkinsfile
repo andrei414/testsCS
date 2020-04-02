@@ -9,7 +9,8 @@ pipeline {
 		            script {
 		              timeout(time: 10, unit: 'MINUTES') 
 		              {
-		                input message: 'test approve', submitter: 'test, marcel'
+		                input message: 'test approve', submitter: 'test'
+		                input message: 'test approve', submitter: 'test1'
 		              }
 		            }
 		        }
