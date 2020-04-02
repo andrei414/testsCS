@@ -7,8 +7,9 @@ pipeline {
 		                # Some commands
 		                """
 		            script {
-		              timeout(time: 10, unit: 'MINUTES') {
-		                input(id: "Deploy Gate", message: "Deploy", ok: 'Deploy' submitter: test)
+		              timeout(time: 10, unit: 'MINUTES') 
+		              {
+		                input message: 'test approve', submitter: MY_APPROVERS
 		              }
 		            }
 		        }
