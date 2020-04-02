@@ -9,7 +9,6 @@ pipeline {
 		            script {
 		              timeout(time: 10, unit: 'MINUTES') {
 		              	input(name)
-		              	read $name
 		                input(id: "Deploy Gate", message: "Deploy", ok: 'Deploy')
 		              }
 		            }
