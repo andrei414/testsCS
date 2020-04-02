@@ -1,13 +1,11 @@
 pipeline {
 	agent any 
 	stages{
-stage{
-    script{
-        input "Continue?"
-        ...enter code here
-        ...
-    }
-}
+			stage{
+			    script{
+			        input "Continue?"
+			    }
+			}
 		
 		    stage('deploy') {
 		        when {
