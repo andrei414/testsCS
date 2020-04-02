@@ -8,7 +8,6 @@ pipeline {
 		                """
 		            script {
 		              timeout(time: 10, unit: 'MINUTES') {
-		              	input(name)
 		                input(id: "Deploy Gate", message: "Deploy", ok: 'Deploy')
 		              }
 		            }
