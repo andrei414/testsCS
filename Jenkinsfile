@@ -14,6 +14,7 @@ pipeline {
                         retry(1) {
                            input "Retry the job ?"
                            build(job: 'pipelines/testCS')
+                           exit 1
                         }
                     }
                 }
