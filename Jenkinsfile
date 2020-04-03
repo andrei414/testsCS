@@ -24,6 +24,12 @@ pipeline {
                 }
             }            
         }
+        stage('deploy'){
+            steps{
+                sh 'echo "deploy made"'
+            }
+        }
+
     }
     post {
         aborted {
