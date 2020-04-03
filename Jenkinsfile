@@ -11,7 +11,7 @@ pipeline {
             post {
                 aborted{
                     script{
-                        build(job: 'pipelines/testCS')
+                        build(stage: 'test')
                     }
                 }
             }            
