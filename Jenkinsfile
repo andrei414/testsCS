@@ -13,7 +13,7 @@ pipeline {
                     script{
                         retry(1) {
                            input "Retry the job ?"
-                           build(job: 'pipelines/testCS')
+
                         }
                         options {
                           // TODO: Fix - some tests are flaky - sometimes pass, sometimes not
