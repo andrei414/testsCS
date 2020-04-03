@@ -11,7 +11,7 @@ pipeline {
             post {
                 aborted{
                     script{
-                        retry(9) {
+                        retry(1) {
                            input "Retry the job ?"
                            build 'test'
                         }
