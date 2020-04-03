@@ -20,24 +20,10 @@ pipeline {
                 }
             }
             post{
-                failure {
-                    script{
-                        sh "exit 1"
-                        //or
-                        error "Failed, exiting now..."
-                    }
-                }
                 aborted {
                     script{
                         sh 'echo "stage aborted mate"'
                     }
-                }
-                unstable {
-                    script{
-                           sh "exit 1"
-                          //or
-                          error "Unstable, exiting now..."                    
-                     }
                 }
             }
         }
