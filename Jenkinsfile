@@ -9,9 +9,10 @@ pipeline {
             // For initial run every stage
             when { expression { params.stageOne == "FAILURE" } }
             steps {
+                sh 'echo "hello"'
                 script {
                     try {
-                        sh 'echo "hello"'
+                        // make thing
                     } catch (Exception e) {
                         stageOneStatus = "FAILURE";
                     }
