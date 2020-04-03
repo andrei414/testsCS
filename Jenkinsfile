@@ -14,8 +14,10 @@ pipeline {
 		}
 
         stage ('wait for fix'){
-            timeout(time: 1, unit: 'MINUTES'){
-                input "ready to return?"
+            steps{
+                timeout(time: 1, unit: 'MINUTES'){
+                    input "ready to return?"
+                }
             }
         }
 		
