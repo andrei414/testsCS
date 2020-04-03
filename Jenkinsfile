@@ -1,3 +1,7 @@
+def buildNumber = env.BUILD_NUMBER as int
+if (buildNumber > 1) milestone(buildNumber - 1)
+milestone(buildNumber)
+
 pipeline {
     agent any
     stages {
@@ -13,7 +17,7 @@ pipeline {
                     script{
                         retry(1) {
                            input "Retry the job ?"
-                           build(job: 'pipelines/testCS'); exit 1
+                           build(job: 'pipelines/testCS')
                         }
                     }
                 }
