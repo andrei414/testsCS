@@ -13,10 +13,15 @@ pipeline {
 		    }
 		}
 
-        stage ('wait for fix'){
+        stage ('check'){
+            when {expression { params.build == "FAILURE" }}
             steps{
-                timeout(time: 1, unit: 'MINUTES'){
-                    input "ready to return?"
+                script{
+                    try{
+                        build(job: 'build')
+                    } catch (Exception e) {
+                        stageThreeStatus = "FAILURE";
+                    }
                 }
             }
         }
