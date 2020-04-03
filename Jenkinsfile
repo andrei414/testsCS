@@ -16,7 +16,11 @@ pipeline {
                            build 'test'
                         }
                     }
-
+                }
+                success {
+                    script{
+                        build 'test'
+                    }      
                 }
             }            
         }
