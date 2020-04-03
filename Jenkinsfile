@@ -15,6 +15,13 @@ pipeline {
                            input "Retry the job ?"
                            build(job: 'pipelines/testCS')
                         }
+                        options {
+                          // TODO: Fix - some tests are flaky - sometimes pass, sometimes not
+                          retry(3)
+                        }
+                        steps {
+                          runCompose( 'test' )
+                        }
                     }
                 }
                 success {
