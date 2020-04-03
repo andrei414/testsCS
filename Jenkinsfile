@@ -11,7 +11,7 @@ pipeline {
             steps {
                 script {
                     try {
-                        // make thing
+                        sh 'echo "hello"'
                     } catch (Exception e) {
                         stageOneStatus = "FAILURE";
                     }
