@@ -19,7 +19,7 @@ pipeline {
                 }
                 success {
                     script{
-                        build 'test'
+                        sh 'echo "continue"'
                     }      
                 }
             }            
