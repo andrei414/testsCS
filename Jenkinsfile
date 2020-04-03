@@ -14,6 +14,11 @@ pipeline {
 		}
 
         stage ('check'){
+            steps {
+                script{
+                    //step2
+                }
+            }
             post{
                 failure {
                     script{
