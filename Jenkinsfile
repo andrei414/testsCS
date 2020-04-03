@@ -14,7 +14,7 @@ pipeline {
 		}
 
         stage ('check'){
-            when {expression { params.build == "REJECTED" }}
+            when {expression { params.build == "ABORTED" }}
             steps{
                 script{
                     try{
