@@ -14,14 +14,27 @@ pipeline {
 		}
 
         stage ('check'){
-            when {expression { params.build == "ABORTED" }}
-            steps{
-                script{
-                    try{
-                        build(job: 'check', propagate: false)
-                    } catch (Exception e) {
-                        stageThreeStatus = "FAILURE";
+            post{
+                success {
+                }
+                failure {
+                    script{
+                        sh "exit 1"
+                        //or
+                        error "Failed, exiting now..."
                     }
+                }
+                aborted {
+                    script{
+                        sh 'echo "stage aborted mate"'
+                    }
+                }
+                unstable {
+                    script{
+                           sh "exit 1"
+                          //or
+                          error "Unstable, exiting now..."                    
+                     }
                 }
             }
         }
