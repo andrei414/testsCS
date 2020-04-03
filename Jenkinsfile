@@ -1,31 +1,48 @@
-pipeline {
-	agent any 
-	stages{
-		stage('replay') {
-			steps {
-				sh 'echo "replay"'
-			}
-		}
-		stage('build') {
-		        steps {
-		            sh  'echo "deploy acc"'
-		            script {
-		              timeout(time: 10, unit: 'MINUTES') 
-		              {
-		                input message: 'test approve', submitter: 'test'
-		              }
-		              retry(3){
-		              	sh 'echo "hi"'
-		              }
-		            }
-		        }
-		    }
-		
-		    stage('deploy') {
-		        steps {
-		            sh 'echo "hello"'
-		        }
-		    }
-		}
-}
+def stageOneStatus;
+def stageTwoStatus;
+def stageThreeStatus;
 
+pipeline {
+    agent any
+    stages {
+        stage("STAGE 1") {
+            // For initial run every stage
+            when { expression { params.stageOne == "FAILURE" } }
+            steps {
+                script {
+                    try {
+                        // make thing
+                    } catch (Exception e) {
+                        stageOneStatus = "FAILURE";
+                    }
+                }
+            }
+        }
+
+        stage("STAGE 2") {
+            when { expression { params.stageTwo == "FAILURE" } }
+            steps {
+                script {
+                    try {
+                        // make thing
+                    } catch (Exception e) {
+                        stageTwoStatus = "FAILURE";
+                    }
+                }
+            }
+        }
+
+        stage("STAGE 3") {
+            when { expression { params.stageThree == "FAILURE" } }
+            steps {
+                script {
+                    try {
+                        // make thing
+                    } catch (Exception e) {
+                        stageThreeStatus = "FAILURE";
+                    }
+                }
+            }
+        }
+    }
+}
