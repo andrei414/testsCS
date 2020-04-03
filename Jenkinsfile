@@ -1,38 +1,25 @@
 pipeline {
-	agent any 
-	stages{
-		stage('build') {
-		    steps {
-		        sh  'echo "deploy acc"'
-		        script {
-		          timeout(time: 10, unit: 'SECONDS') 
-		          {
-		            input message: 'test approve', submitter: 'test'
-		          }
-		        }
-		    }
-		}
-
-        stage ('check'){
+    agent any
+    stages {
+        stage('test') {
             steps {
-                script{
-                    sh 'echo "mai jos urmeaza"'
+                script {
+                    input message: 'Proceed?', ok: 'Yes', submitter: 'admin'
                 }
+                echo "helloworld"
             }
-            post{
-                aborted {
+            post {
+                aborted{
                     script{
-                        sh 'echo "stage aborted mate"'
+                        build(job: 'test')
                     }
                 }
-            }
+            }            
         }
-		
-		stage('deploy') {
-		    steps {
-	         sh 'echo "hello"'
-	        }
-	    }
-	}
+    }
+    post {
+        aborted {
+            echo "pipeline has been aborted"
+        }
+    }
 }
-
