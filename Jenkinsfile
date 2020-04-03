@@ -14,7 +14,7 @@ pipeline {
 		              {
 		                input message: 'test approve', submitter: 'test'
 		              }
-		              retry(1){
+		              retry(3){
 		              	sh 'echo "hi"'
 		              }
 		            }
