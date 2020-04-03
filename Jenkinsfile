@@ -3,7 +3,7 @@ pipeline {
 	stages{
 		stage('replay') {
 			steps {
-				sh echo
+				sh 'echo "replay"'
 			}
 		}
 		stage('build') {
