@@ -5,7 +5,7 @@ pipeline {
 		    steps {
 		        sh  'echo "deploy acc"'
 		        script {
-		          timeout(time: 10, unit: 'SECONDS') 
+		          timeout(time: 1, unit: 'MINUTES') 
 		          {
 		            input message: 'test approve', submitter: 'test'
 		          }
