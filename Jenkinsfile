@@ -16,7 +16,7 @@ pipeline {
         stage ('check'){
             steps {
                 script{
-                    //step2
+                    sh 'echo "mai jos urmeaza"'
                 }
             }
             post{
