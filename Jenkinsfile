@@ -15,8 +15,6 @@ pipeline {
 
         stage ('check'){
             post{
-                success {
-                }
                 failure {
                     script{
                         sh "exit 1"
