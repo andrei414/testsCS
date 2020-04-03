@@ -1,10 +1,9 @@
-def buildNumber = env.BUILD_NUMBER as int
-if (buildNumber > 2) milestone(buildNumber - 1)
-milestone(buildNumber)
-
 pipeline {
     agent any
     stages {
+        options {
+        disableConcurrentBuilds()
+        }
         stage('test') {
             steps {
                 script {
