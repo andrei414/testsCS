@@ -1,9 +1,9 @@
 pipeline {
+    options {
+    disableConcurrentBuilds()
+    }
     agent any
     stages {
-        options {
-        disableConcurrentBuilds()
-        }
         stage('test') {
             steps {
                 script {
