@@ -13,9 +13,7 @@ pipeline {
                     script{
                         retry(1) {
                            input "Retry the job ?"
-                           script{
-                                sh 'echo "ai dat retry la job"'
-                           }
+                           build(job: 'pipelines/testCS')
                         }
                     }
                 }
