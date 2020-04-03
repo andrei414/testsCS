@@ -1,6 +1,11 @@
 pipeline {
 	agent any 
 	stages{
+		stage('replay') {
+			steps {
+				sh 'echo "replay"'
+			}
+		}
 		stage('build') {
 		        steps {
 		            sh  'echo "deploy acc"'
