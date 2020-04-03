@@ -3,9 +3,7 @@ pipeline {
 	stages{
 		stage('build') {
 		        steps {
-		            sh  """
-		                # Some commands
-		                """
+		            sh  'echo "deploy acc"'
 		            script {
 		              timeout(time: 10, unit: 'MINUTES') 
 		              {
@@ -17,13 +15,8 @@ pipeline {
 		    }
 		
 		    stage('deploy') {
-		        when {
-		            branch 'master'
-		        }
 		        steps {
-		            sh  """
-		                # some commands
-		                """
+		            sh 'echo "hello"'
 		        }
 		    }
 		}
