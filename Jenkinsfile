@@ -18,7 +18,7 @@ pipeline {
             steps{
                 script{
                     try{
-                        build(job: 'build', propagate: false)
+                        build(job: 'check', propagate: false)
                     } catch (Exception e) {
                         stageThreeStatus = "FAILURE";
                     }
