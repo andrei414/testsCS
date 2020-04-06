@@ -4,7 +4,7 @@ pipeline {
         stage('test') {
             steps {
                 script {
-                    input message: 'Proceed?', ok: 'Yes', submitter: 'test,admin'
+                    input message: 'Proceed?', ok: 'Yes', submitter: 'admin,test'
                 }
                 echo "helloworld"
             }            
