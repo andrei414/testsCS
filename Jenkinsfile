@@ -17,23 +17,12 @@ pipeline {
                         }
                     }
                 }
-                success {
-                    script{
-                        sh 'echo "continue"'
-                    }      
-                }
             }            
         }
         stage('deploy'){
             steps{
                 sh 'echo "deploy"'
             }
-        }
-
-    }
-    post {
-        aborted {
-            echo "pipeline has been aborted"
         }
     }
 }
