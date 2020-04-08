@@ -1,4 +1,4 @@
-if git diff-index --quiet HEAD --; then
+if git diff origin/master --quiet HEAD --; then
 	echo "no changes"
 else
 	echo "changes"
