@@ -1,4 +1,4 @@
-if git fetch origin | grep -q "Unpacking objects"; then
+if git diff master origin/master --quiet| grep -q "diff"; then
 	echo "changes"
 else
 	echo " no changes"
