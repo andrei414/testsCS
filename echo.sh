@@ -1,5 +1,5 @@
-if git status | grep -q "Your branch is up to date with 'origin/master'"; then
-	echo "no changes"
-else
+if git fetch origin | grep -q "Unpacking objects"; then
 	echo "changes"
+else
+	echo " no changes"
 fi
