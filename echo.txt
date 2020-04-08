@@ -1,5 +1,0 @@
-if git diff-log --quiet HEAD --; then
-	echo "no changes"
-else
-	echo "changes"
-fi
